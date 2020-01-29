@@ -597,7 +597,7 @@ getBiDirServiceContext(omniInterceptors::serverReceiveRequest_T::info_T& info)
 	CORBA::ULong matchedRule;
 	CORBA::Boolean acceptbidir;
 	CORBA::Boolean dumprule = 0;
-	const char* why;
+    const char* why{nullptr};
 
 	if ( (acceptbidir = transportRules::serverRules().
 	                    match(strand.connection->peeraddress(),

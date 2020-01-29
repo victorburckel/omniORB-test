@@ -50,7 +50,7 @@ CORBA::Boolean
 orbOptions::importFromRegistry() throw (orbOptions::Unknown,
 					orbOptions::BadParam) {
 
-  char* rootregname;
+  const char* rootregname;
   HKEY  rootkey;
 
   rootregname = NEW_REGKEY;
@@ -363,3 +363,4 @@ void parseOldConfigReg(orbOptions& opt, HKEY rootkey) {
 }
 
 OMNI_NAMESPACE_END(omni)
+

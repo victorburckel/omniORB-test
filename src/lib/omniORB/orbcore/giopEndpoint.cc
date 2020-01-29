@@ -265,7 +265,7 @@ giopConnection::gatekeeperCheck(giopStrand* strand)
 
   CORBA::Boolean acceptconnection;
   CORBA::Boolean dumprule = 0;
-  const char* why;
+  const char* why{nullptr};
 
   if (!(acceptconnection = transportRules::serverRules().
 	match(peeraddress(), actions, matchedRule)) ) {

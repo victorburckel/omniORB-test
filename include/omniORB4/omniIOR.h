@@ -243,7 +243,7 @@ public:
 					   omniIOR&);
   static void  add_TAG_SSL_SEC_TRANS(const IIOP::Address&,
 				     _CORBA_UShort         supports,
-				     _CORBA_UShort         requires,
+				     _CORBA_UShort         requires_,
                                      _OMNI_NS(IORPublish)* eps);
 
   ////
@@ -308,3 +308,4 @@ private:
 
 
 #endif // __OMNIIOR_H__
+

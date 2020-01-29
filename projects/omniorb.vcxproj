@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{6F13E1C4-1D38-4958-A053-81555215F73F}</ProjectGuid>
+    <RootNamespace>omniorb</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>omniORB</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="base.props" />
+    <Import Project="vcpkg.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="base.props" />
+    <Import Project="vcpkg.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="base.props" />
+    <Import Project="vcpkg.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="base.props" />
+    <Import Project="vcpkg.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\src\lib\omniORB\orbcore;$(ProjectDir)..\src\lib\omniORB;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>ws2_32.lib;mswsock.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\src\lib\omniORB\orbcore;$(ProjectDir)..\src\lib\omniORB;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>ws2_32.lib;mswsock.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\src\lib\omniORB\orbcore;$(ProjectDir)..\src\lib\omniORB;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>ws2_32.lib;mswsock.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\src\lib\omniORB\orbcore;$(ProjectDir)..\src\lib\omniORB;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>ws2_32.lib;mswsock.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\lib\omniORB\orbcore\anonObject.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\bootstrapstub.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\callDescriptor.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\callHandle.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\cdrMemoryStream.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\cdrStream.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\cdrStreamAdapter.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\cdrValueChunkStream.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\codeSets.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\constants.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\corbaBoa.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\corbaFixed.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\corbaObject.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\corbaOrb.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\corbaString.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\corbaWString.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\cs-16bit.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\cs-8859-1.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\cs-8bit.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\cs-UTF-16.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\cs-UTF-8.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\current.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\dynamicLib.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\exception.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\exceptn.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\giopBiDir.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\giopEndpoint.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\giopImpl10.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\giopImpl11.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\giopImpl12.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\giopMonitor.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\giopRendezvouser.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\giopRope.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\giopServer.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\giopStrand.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\giopStream.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\giopStreamImpl.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\giopWorker.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\GIOP_C.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\GIOP_S.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\initRefs.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\inProcessIdentity.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\interceptors.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\invoker.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\ior.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\libcWrapper.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\localIdentity.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\localObject.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\logIOstream.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\minorCode.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\msvcdllstub.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\Namingstub.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\objectAdapter.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\objectStub.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\omniIdentity.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\omniInternal.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\omniIOR.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\omniObjRef.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\omniORB.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\omniPolicy.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\omniServant.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\omniTransport.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\orbOptions.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\orbOptionsFile.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\orbOptionsReg.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\poa.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\poamanager.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\poastubs.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\policy.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\portableserver.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\proxyFactory.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\remoteIdentity.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\rmutex.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\shutdownIdentity.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\SocketCollection.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\ssl\sslActive.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\omniORB\orbcore\ssl\sslAddress.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\omniORB\orbcore\ssl\sslConnection.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\omniORB\orbcore\ssl\sslContext.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\omniORB\orbcore\ssl\sslEndpoint.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\omniORB\orbcore\ssl\sslTransportImpl.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\omniORB\orbcore\tcpSocket.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\tcp\tcpActive.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\tcp\tcpAddress.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\tcp\tcpConnection.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\tcp\tcpEndpoint.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\tcp\tcpTransportImpl.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\tracedthread.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\transportRules.cc" />
+    <ClCompile Include="..\src\lib\omniORB\orbcore\uri.cc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\lib\omniORB\orbcore\ssl\sslAddress.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\src\lib\omniORB\orbcore\ssl\sslConnection.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\src\lib\omniORB\orbcore\ssl\sslEndpoint.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\src\lib\omniORB\orbcore\ssl\sslTransportImpl.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\src\lib\omniORB\orbcore\tcp\tcpAddress.h" />
+    <ClInclude Include="..\src\lib\omniORB\orbcore\tcp\tcpConnection.h" />
+    <ClInclude Include="..\src\lib\omniORB\orbcore\tcp\tcpEndpoint.h" />
+    <ClInclude Include="..\src\lib\omniORB\orbcore\tcp\tcpTransportImpl.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\src\lib\omniORB\orbcore\transport.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="omnithread.vcxproj">
+      <Project>{8f6af825-5858-4317-a488-a3529f950908}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

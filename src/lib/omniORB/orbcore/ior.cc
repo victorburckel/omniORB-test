@@ -867,7 +867,7 @@ omniIOR::add_TAG_ALTERNATE_IIOP_ADDRESS(const IIOP::Address& address,
 void
 omniIOR::add_TAG_SSL_SEC_TRANS(const IIOP::Address& address,
 			       CORBA::UShort        supports,
-                               CORBA::UShort        requires,
+                               CORBA::UShort        requires_,
                                IORPublish*          eps)
 {
   if (!eps)
@@ -880,7 +880,7 @@ omniIOR::add_TAG_SSL_SEC_TRANS(const IIOP::Address& address,
 
     eps->tls_addrs[length] = address;
     eps->tls_supports      = supports;
-    eps->tls_requires      = requires;
+    eps->tls_requires      = requires_;
   }
 
   if (strlen(eps->address.host) == 0) {
@@ -895,7 +895,7 @@ omniIOR::add_TAG_SSL_SEC_TRANS(const IIOP::Address& address,
 
   cdrEncapsulationStream s(CORBA::ULong(0),CORBA::Boolean(1));
   supports >>= s;
-  requires >>= s;
+  requires_ >>= s;
   address.port >>= s;
 
   CORBA::ULong index = eps->ssl_addrs.length();
@@ -908,7 +908,7 @@ omniIOR::add_TAG_SSL_SEC_TRANS(const IIOP::Address& address,
 static
 void add_TAG_CSI_SEC_MECH_LIST(const _CORBA_Unbounded_Sequence<IIOP::Address>& addrs,
 			       CORBA::UShort supports,
-                               CORBA::UShort requires,
+                               CORBA::UShort requires_,
                                IORPublish*   eps)
 {
   if (!eps)
@@ -942,7 +942,7 @@ void add_TAG_CSI_SEC_MECH_LIST(const _CORBA_Unbounded_Sequence<IIOP::Address>& a
   //   SAS_ContextSec sas_context_mech;
   // };
 
-  requires >>= stream;
+  requires_ >>= stream;
 
   IOP::TaggedComponent transport_mech;
   transport_mech.tag = IOP::TAG_TLS_SEC_TRANS;
@@ -950,7 +950,7 @@ void add_TAG_CSI_SEC_MECH_LIST(const _CORBA_Unbounded_Sequence<IIOP::Address>& a
   cdrEncapsulationStream mech_stream(CORBA::ULong(0),CORBA::Boolean(1));
 
   supports >>= mech_stream;
-  requires >>= mech_stream;
+  requires_ >>= mech_stream;
   addrs    >>= mech_stream;
 
   {
@@ -1251,3 +1251,4 @@ static omni_ior_initialiser initialiser;
 omniInitialiser& omni_ior_initialiser_ = initialiser;
 
 OMNI_NAMESPACE_END(omni)
+
